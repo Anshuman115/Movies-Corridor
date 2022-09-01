@@ -37,3 +37,6 @@ export default App;
 // the components folder and their jsx
 // add all the components in their routes
 // 7. make an .env file to stop dev error due to eslint
+// 8. continue with components from top to bottom or like start from navbar.
+// 9. Use material ui components for the navbar
+// 10.
