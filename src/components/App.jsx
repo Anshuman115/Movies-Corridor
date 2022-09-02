@@ -3,6 +3,7 @@ import { CssBaseline } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 
 import { Actors, MovieInformation, Movies, Profile, Navbar } from '.';
+// import Navbar from './Navbar/Navbar';
 import useStyles from './styles';
 
 function App() {
@@ -39,4 +40,5 @@ export default App;
 // 7. make an .env file to stop dev error due to eslint
 // 8. continue with components from top to bottom or like start from navbar.
 // 9. Use material ui components for the navbar
-// 10.
+// 10.make sidebar
+// 11. configure redux toolkit
