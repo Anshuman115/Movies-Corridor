@@ -1,6 +1,5 @@
 {
   "name": "movies-corridor",
-  "homepage": "http://anshuman115.github.io/Movies-Corridor",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
