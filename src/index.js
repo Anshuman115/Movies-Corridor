@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 // import createRoot from 'react-dom/client';
 
 import App from './components/App';
+// redux
 import store from './app/store';
 
 const theme = createTheme({});

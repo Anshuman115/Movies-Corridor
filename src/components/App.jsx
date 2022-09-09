@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Actors, MovieInformation, Movies, Profile, Navbar } from '.';
 // import Navbar from './Navbar/Navbar';
 import useStyles from './styles';
+import { useGetGenresQuery } from '../services/TMDB';
 
 function App() {
   const classes = useStyles();
