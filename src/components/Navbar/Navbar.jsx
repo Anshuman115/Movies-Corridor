@@ -10,37 +10,41 @@ import { fetchToken, createSessionId, moviesApi } from '../../utils';
 
 import useStyles from './styles';
 import { Search, Sidebar } from '..';
-import { setUser, userSelector } from '../../features/auth';
+import { setUser } from '../../features/auth';
 
 function Navbar() {
-  const { isAuthenticated, user } = useSelector(userSelector);
-  const [mobileOpen, setMobileOpen] = useState(false);
   const classes = useStyles();
   const isMobile = useMediaQuery(' (max-width:600px');
   const theme = useTheme();
-  // const isAuthenticated = false;
-  const sessionIdFromLocalStorage = localStorage.getItem('session_id');
+
   const dispatch = useDispatch();
+  const { isAuthenticated, user } = useSelector((state) => state.user);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  // const isAuthenticated = false;
 
   console.log(user);
-
   const token = localStorage.getItem('request_token');
-  useEffect(() => () => {
+  const sessionIdFromLocalStorage = localStorage.getItem('session_id');
+  useEffect(() => {
     const logInUser = async () => {
       if (token) {
         if (sessionIdFromLocalStorage) {
           const { data: userData } = await moviesApi.get(`/account?session_id=${sessionIdFromLocalStorage}`);
+          console.log('dispatching...');
           dispatch(setUser(userData));
           console.log(isAuthenticated, 'here');
         } else {
           const sessionId = await createSessionId();
           const { data: userData } = await moviesApi.get(`/account?session_id=${sessionId}`);
+          console.log('dispatching...');
           dispatch(setUser(userData));
         }
       }
     };
     logInUser();
   }, [token]);
+
+  console.log('Hi', user);
 
   return (
     <>
