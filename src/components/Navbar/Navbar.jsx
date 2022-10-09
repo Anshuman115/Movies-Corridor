@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { AppBar, IconButton, Toolbar, Drawer, Button, Avatar, useMediaQuery } from '@mui/material';
 import { AccountCircle, Menu, Brightness4, Brightness7 } from '@mui/icons-material';
 
@@ -7,6 +7,8 @@ import { useTheme } from '@mui/material/styles';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchToken, createSessionId, moviesApi } from '../../utils';
+
+import { colorModeContext } from '../../utils/ToggleColorMode';
 
 import useStyles from './styles';
 import { Search, Sidebar } from '..';
@@ -21,6 +23,8 @@ function Navbar() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
   const [mobileOpen, setMobileOpen] = useState(false);
   // const isAuthenticated = false;
+
+  const colorMode = useContext(colorModeContext);
 
   console.log(user);
   const token = localStorage.getItem('request_token');
@@ -61,7 +65,7 @@ function Navbar() {
             <Menu />
           </IconButton>
           )}
-          <IconButton color="inherit" sx={{ ml: 1 }} onClick={() => {}}>
+          <IconButton color="inherit" sx={{ ml: 1 }} onClick={colorMode.toggleColorMode}>
             {theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 /> }
           </IconButton>
           {!isMobile && <Search />}
@@ -82,7 +86,7 @@ function Navbar() {
                 <Avatar
                   style={{ width: 30, height: 30 }}
                   alt="Profile"
-                  src="https://st3.depositphotos.com/9998432/13335/v/380/depositphotos_133352010-stock-illustration-default-placeholder-man-and-woman.jpg?forcejpeg=true"
+                  src={`https://www.themoviedb.org/t/p/w64_and_h64_face${user?.avatar?.tmdb?.avatar_path}`}
                 />
               </Button>
             )}

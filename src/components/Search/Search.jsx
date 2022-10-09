@@ -18,6 +18,9 @@ function Search() {
       dispatch(searchMovie(query));
     }
   };
+  const location = useLocation();
+
+  if (location.pathname !== '/') return null;
   return (
     <div className={classes.searchContainer}>
       <TextField
