@@ -12,6 +12,7 @@ export default makeStyles((theme) => ({
       marginLeft: '0',
       flexWrap: 'wrap',
     },
+    backgroundColor: '#520166',
   },
   menuButton: {
     marginRight: theme.spacing(2),

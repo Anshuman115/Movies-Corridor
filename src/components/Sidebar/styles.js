@@ -1,6 +1,7 @@
 import { makeStyles } from '@mui/styles';
 
 export default makeStyles((theme) => ({
+
   imageLink: {
     display: 'flex',
     justifyContent: 'center',
@@ -8,6 +9,9 @@ export default makeStyles((theme) => ({
   },
   image: {
     width: '90%',
+  },
+  sidebar: {
+    backgroundColor: '#CD79EB',
   },
   links: {
     color: theme.palette.text.primary,
