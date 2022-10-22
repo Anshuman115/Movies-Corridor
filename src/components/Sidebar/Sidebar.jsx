@@ -33,7 +33,7 @@ function Sidebar({ setMobileOpen }) {
 
   // console.log(data);
   return (
-    <>\
+    <div className={classes.sidebar}>/
       <Link to="/" className={classes.imageLink}>
         <img
           className={classes.image}
@@ -79,7 +79,7 @@ function Sidebar({ setMobileOpen }) {
         ))}
 
       </List>
-    </>
+    </div>
   );
 }
 
