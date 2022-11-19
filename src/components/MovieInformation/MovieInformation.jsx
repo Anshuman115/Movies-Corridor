@@ -7,7 +7,6 @@ import {
   Grid,
   Box,
   CircularProgress,
-  useMediaQuery,
   Rating,
 } from '@mui/material';
 import {
@@ -103,10 +102,10 @@ function MovieInformation() {
         />
       </Grid>
       <Grid item container direction="column" lg="7">
-        <Typography variant="h3" align="center" gutterBottom>
+        <Typography variant="h4" align="center" gutterBottom>
           {data?.title} ({data.release_date.split('-')[0]})
         </Typography>
-        <Typography variant="h5" align="center" gutterBottom>
+        <Typography variant="h6" align="center" gutterBottom>
           {data?.tagline} ({data.release_date.split('-')[0]})
         </Typography>
         <Grid item className={classes.containerSpaceAround}>
@@ -120,7 +119,7 @@ function MovieInformation() {
               {data.vote_average}/10
             </Typography>
           </Box>
-          <Typography variant="h6" align="center" gutterBottom>
+          <Typography variant="subtitle1" align="center" gutterBottom>
             {data?.runtime}min | Language:{data?.spoken_languages[0].name}
           </Typography>
         </Grid>

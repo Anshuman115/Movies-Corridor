@@ -33,7 +33,7 @@ function Sidebar({ setMobileOpen }) {
 
   // console.log(data);
   return (
-    <div className={classes.sidebar}>/
+    <div className={classes.sidebar}>
       <Link to="/" className={classes.imageLink}>
         <img
           className={classes.image}
@@ -43,7 +43,7 @@ function Sidebar({ setMobileOpen }) {
       </Link>
       <Divider />
       <List>
-        <ListSubheader>
+        <ListSubheader sx={{ backgroundColor: '#520166', color: 'white' }}>
           Categories
         </ListSubheader>
         {categories.map(({ label, value }) => (
@@ -60,7 +60,7 @@ function Sidebar({ setMobileOpen }) {
 
       <Divider />
       <List>
-        <ListSubheader>
+        <ListSubheader sx={{ backgroundColor: '#520166', color: 'white' }}>
           Genres
         </ListSubheader>
         {isFetching ? (

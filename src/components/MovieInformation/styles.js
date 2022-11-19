@@ -12,19 +12,17 @@ export default makeStyles((theme) => ({
   },
   poster: {
     borderRadius: '20px',
-    // height: '50%',
     boxShadow: '0.5em 1em 1em rgb(64,64,70)',
-    width: '80%',
+    width: '50%',
+    margin: '0 auto',
     [theme.breakpoints.down('md')]: {
       margin: '0 auto',
       width: '50%',
-      // height: '350px',
     },
     [theme.breakpoints.up('lg')]: {
-      margin: '0 auto',
-      // width: '50%',
-      height: '80%',
-      // height: '350px',
+      // margin: '0 auto',
+      width: '333px',
+      height: '500px',
     },
     [theme.breakpoints.down('sm')]: {
       margin: '0 auto',
