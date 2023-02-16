@@ -190,6 +190,7 @@ function MovieInformation() {
                   rel="noopener noreferrer"
                   href={data?.homepage}
                   endIcon={<Language />}
+                  color="secondary"
                 >
                   Website
                 </Button>
@@ -198,10 +199,11 @@ function MovieInformation() {
                   rel="noopener noreferrer"
                   href={`https://www.imdb.com/title/${data?.imdb_id}`}
                   endIcon={<MovieIcon />}
+                  color="secondary"
                 >
                   IMDB
                 </Button>
-                <Button onClick={() => setOpen(true)} href="#" endIcon={<Theaters />}>
+                <Button onClick={() => setOpen(true)} href="#" endIcon={<Theaters />} color="secondary">
                   Trailer
                 </Button>
               </ButtonGroup>
@@ -213,6 +215,7 @@ function MovieInformation() {
                   endIcon={
                     isMovieFavorited ? <FavoriteBorderOutlined /> : <Favorite />
                   }
+                  color="secondary"
                 >
                   {isMovieFavorited ? 'Unfavorite' : 'Favorite'}
                 </Button>
@@ -221,12 +224,13 @@ function MovieInformation() {
                   endIcon={
                     isMovieWatchlisted ? <Remove /> : <PlusOne />
                   }
+                  color="secondary"
                 >
                   {/* {isMovieWatchlisted ? 'Remove from watchlist' : 'Add to watch list'} */}
                   WatchList
                 </Button>
-                <Button endIcon={<ArrowBack />} sx={{ borderColor: 'primary.main' }}>
-                  <Typography style={{ textDecoration: 'none' }} component={Link} to="/" color="inherit" variant="subtitle2">
+                <Button endIcon={<ArrowBack color="secondary" />} sx={{ borderColor: 'secondary.main' }}>
+                  <Typography style={{ textDecoration: 'none' }} component={Link} to="/" color="secondary" variant="subtitle2">
                     Back
                   </Typography>
                 </Button>

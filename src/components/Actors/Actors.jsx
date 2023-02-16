@@ -47,16 +47,16 @@ function Actors() {
             {data?.name}
           </Typography>
           <Typography variant="h5" gutterBottom>
-            Born:{new Date(data?.birthday).toDateString()}
+            Born: {new Date(data?.birthday).toDateString()}
           </Typography>
           <Typography variant="body1" align="justify" paragraph>
             {data?.biography || 'sorry no bio yet'}
           </Typography>
-          <Box marginTop="2rem" display="flex" justifyContent="space-around">
-            <Button variant="contained" color="primary" target="_blank" href={`http://www.imdb.com/name/${data?.imdb_id}`}>
+          <Box marginTop="2rem" display="flex">
+            <Button variant="contained" color="secondary" target="_blank" href={`http://www.imdb.com/name/${data?.imdb_id}`}>
               IMDB
             </Button>
-            <Button startIcon={<ArrowBack />} onClick={() => navigate(-1)} color="primary">
+            <Button startIcon={<ArrowBack color="secondary" />} onClick={() => navigate(-1)} color="secondary">
               Back
             </Button>
           </Box>
