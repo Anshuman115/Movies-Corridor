@@ -1,7 +1,6 @@
 import { makeStyles } from '@mui/styles';
 
-export default makeStyles((theme) => ({
-
+export default makeStyles(() => ({
   imageLink: {
     display: 'flex',
     justifyContent: 'center',
@@ -11,14 +10,16 @@ export default makeStyles((theme) => ({
     width: '90%',
   },
   sidebar: {
-    backgroundColor: '#CD79EB',
+    backgroundColor: '#520166',
+
   },
   links: {
-    color: theme.palette.text.primary,
+    color: 'white',
     textDecoration: 'none',
   },
   genreImage: {
     height: '18px',
-    filter: theme.palette.mode === 'dark' && 'invert(1)',
+    // filter: theme.palette.mode === 'dark' && 'invert(1)',
+    filter: 'invert(1)',
   },
 }));

@@ -7,7 +7,6 @@ import {
   Grid,
   Box,
   CircularProgress,
-  useMediaQuery,
   Rating,
 } from '@mui/material';
 import {
@@ -103,10 +102,10 @@ function MovieInformation() {
         />
       </Grid>
       <Grid item container direction="column" lg="7">
-        <Typography variant="h3" align="center" gutterBottom>
+        <Typography variant="h4" align="center" gutterBottom>
           {data?.title} ({data.release_date.split('-')[0]})
         </Typography>
-        <Typography variant="h5" align="center" gutterBottom>
+        <Typography variant="h6" align="center" gutterBottom>
           {data?.tagline} ({data.release_date.split('-')[0]})
         </Typography>
         <Grid item className={classes.containerSpaceAround}>
@@ -120,7 +119,7 @@ function MovieInformation() {
               {data.vote_average}/10
             </Typography>
           </Box>
-          <Typography variant="h6" align="center" gutterBottom>
+          <Typography variant="subtitle1" align="center" gutterBottom>
             {data?.runtime}min | Language:{data?.spoken_languages[0].name}
           </Typography>
         </Grid>
@@ -191,6 +190,7 @@ function MovieInformation() {
                   rel="noopener noreferrer"
                   href={data?.homepage}
                   endIcon={<Language />}
+                  color="secondary"
                 >
                   Website
                 </Button>
@@ -199,10 +199,11 @@ function MovieInformation() {
                   rel="noopener noreferrer"
                   href={`https://www.imdb.com/title/${data?.imdb_id}`}
                   endIcon={<MovieIcon />}
+                  color="secondary"
                 >
                   IMDB
                 </Button>
-                <Button onClick={() => setOpen(true)} href="#" endIcon={<Theaters />}>
+                <Button onClick={() => setOpen(true)} href="#" endIcon={<Theaters />} color="secondary">
                   Trailer
                 </Button>
               </ButtonGroup>
@@ -214,6 +215,7 @@ function MovieInformation() {
                   endIcon={
                     isMovieFavorited ? <FavoriteBorderOutlined /> : <Favorite />
                   }
+                  color="secondary"
                 >
                   {isMovieFavorited ? 'Unfavorite' : 'Favorite'}
                 </Button>
@@ -222,12 +224,13 @@ function MovieInformation() {
                   endIcon={
                     isMovieWatchlisted ? <Remove /> : <PlusOne />
                   }
+                  color="secondary"
                 >
                   {/* {isMovieWatchlisted ? 'Remove from watchlist' : 'Add to watch list'} */}
                   WatchList
                 </Button>
-                <Button endIcon={<ArrowBack />} sx={{ borderColor: 'primary.main' }}>
-                  <Typography style={{ textDecoration: 'none' }} component={Link} to="/" color="inherit" variant="subtitle2">
+                <Button endIcon={<ArrowBack color="secondary" />} sx={{ borderColor: 'secondary.main' }}>
+                  <Typography style={{ textDecoration: 'none' }} component={Link} to="/" color="secondary" variant="subtitle2">
                     Back
                   </Typography>
                 </Button>

@@ -18,11 +18,25 @@ function Pagination({ currentPage, setPage, totalPages }) {
   if (totalPages === 0) return null;
   return (
     <div className={classes.container}>
-      <Button onClick={handlePrev} className={classes.button} variant="contained" color="primary" type="button">
+      <Button
+        onClick={handlePrev}
+        className={classes.button}
+        variant="contained"
+        color="secondary"
+        type="button"
+      >
         Prev
       </Button>
-      <Typography variant="h4" className={classes.pageNumber}>{currentPage}</Typography>
-      <Button onClick={handleNext} className={classes.button} variant="contained" color="primary" type="button">
+      <Typography variant="h4" className={classes.pageNumber}>
+        {currentPage}
+      </Typography>
+      <Button
+        onClick={handleNext}
+        className={classes.button}
+        variant="contained"
+        color="secondary"
+        type="button"
+      >
         Next
       </Button>
     </div>
