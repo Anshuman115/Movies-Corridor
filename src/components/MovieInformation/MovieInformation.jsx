@@ -44,7 +44,7 @@ function MovieInformation() {
   const { data: recommendations, isFetching: isRecommendationFetching } = useGetRecommendationsQuery({ list: '/recommendations', movie_id: id });
 
   const addToFavorites = async () => {
-    await axios.post(`https://api.themoviedb.org/3/account/${user.id}/favorite?api_key=${process.env.REACT_APP_TMDB_KEY}&session_id=${localStorage.getItem('session_id')}`, {
+    await axios.post(`https://api.themoviedb.org/3/account/${user.id}/favorite?api_key=${import.meta.env.VITE_TMDB_KEY}&session_id=${localStorage.getItem('session_id')}`, {
       media_type: 'movie',
       media_id: id,
       favorite: !isMovieFavorited,
@@ -53,7 +53,7 @@ function MovieInformation() {
     setisMovieFavorited((prev) => !prev);
   };
   const addToWatchlist = async () => {
-    await axios.post(`https://api.themoviedb.org/3/account/${user.id}/watchlist?api_key=${process.env.REACT_APP_TMDB_KEY}&session_id=${localStorage.getItem('session_id')}`, {
+    await axios.post(`https://api.themoviedb.org/3/account/${user.id}/watchlist?api_key=${import.meta.env.VITE_TMDB_KEY}&session_id=${localStorage.getItem('session_id')}`, {
       media_type: 'movie',
       media_id: id,
       watchlist: !isMovieWatchlisted,

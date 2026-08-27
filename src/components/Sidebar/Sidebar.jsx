@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Divider, List, ListItem, ListItemText, ListSubheader, ListItemIcon, Box, CircularProgress } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { useTheme } from '@mui/styles';
+import { useTheme } from '@mui/material/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import useStyles from './styles';
 import { useGetGenresQuery } from '../../services/TMDB';
@@ -28,8 +28,8 @@ function Sidebar({ setMobileOpen }) {
   const { genreIdOrCategoryName } = useSelector((state) => state.currentGenreOrCategory);
 
   useEffect(() => {
-    setMobileOpen(false);
-  }, [genreIdOrCategoryName]);
+    setMobileOpen?.(false);
+  }, [genreIdOrCategoryName, setMobileOpen]);
 
   // console.log(data);
   return (
@@ -67,7 +67,7 @@ function Sidebar({ setMobileOpen }) {
           <Box display="flex" justifyContent="center">
             <CircularProgress size="4rem" />
           </Box>
-        ) : data.genres.map(({ name, id }) => (
+        ) : (data?.genres ?? []).map(({ name, id }) => (
           <Link key={name} className={classes.links} to="/">
             <ListItem onClick={() => dispatch(selectGenreOrCategory(id))} button>
               <ListItemIcon>

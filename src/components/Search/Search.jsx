@@ -4,7 +4,6 @@ import { Search as SearchIcon } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
-import { getSuggestedQuery } from '@testing-library/react';
 import useStyles from './styles';
 import { searchMovie } from '../../features/currentGenreOrCategory';
 

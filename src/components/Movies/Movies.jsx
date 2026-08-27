@@ -13,6 +13,16 @@ function Movies() {
   const lg = useMediaQuery((theme) => theme.breakpoints.only('lg'));
 
   const numberOfMovies = lg ? 17 : 19;
+  if (error) {
+    return (
+      <Box display="flex" alignItems="center" mt="20px">
+        <Typography variant="h4">
+          Movie data is unavailable. Check VITE_TMDB_KEY.
+        </Typography>
+      </Box>
+    );
+  }
+
   if (isFetching) {
     return (
       <Box display="flex" justifyContent="center">
@@ -21,7 +31,9 @@ function Movies() {
     );
   }
 
-  if (!data.results.length) {
+  const results = data?.results ?? [];
+
+  if (!results.length) {
     return (
       <Box display="flex" alignItems="center" mt="20px">
         <Typography variant="h4">
@@ -30,8 +42,6 @@ function Movies() {
       </Box>
     );
   }
-
-  if (error) return 'An error has occured';
 
   return (
     <div>
